@@ -112,7 +112,7 @@
             // 
             // SignOut_btn
             // 
-            SignOut_btn.BackColor = Color.FromArgb(255, 224, 192);
+            SignOut_btn.BackColor = Color.Red;
             SignOut_btn.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             SignOut_btn.Location = new Point(580, 153);
             SignOut_btn.Name = "SignOut_btn";
