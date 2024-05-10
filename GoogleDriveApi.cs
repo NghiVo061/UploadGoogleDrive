@@ -139,6 +139,13 @@ namespace UploadGoogleDrive
             return $"https://drive.google.com/file/d/{fileid}/view?usp=sharing";
         }
 
+        public static void Signout(string localusername)
+        {
+            string fileSave = string.Format("{0}\\{1}", _fileDataStore.FolderPath, "Google.Apis.Auth.OAuth2.Responses.TokenResponse-" + localusername);
+            if (System.IO.File.Exists(fileSave))
+                System.IO.File.Delete(fileSave);
+        }
+
         public string GetLinkFile(string fileId)
         {
             return $"https://drive.google.com/file/d/{fileId}";
