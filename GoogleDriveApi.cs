@@ -32,7 +32,28 @@ namespace UploadGoogleDrive
             this._clientSecret = clientsecret;
         }
 
-        
+        public async Task LoginAsync()
+        {
+            _fileDataStore = new FileDataStore(crePath, true);
+            var app = new ClientSecrets() { ClientId = this._clientId, ClientSecret = this._clientSecret };
+            var scopes = new[] { DriveService.Scope.Drive,
+                         DriveService.Scope.DriveFile,
+                         DriveService.Scope.DriveAppdata,
+                         DriveService.Scope.DriveReadonly};
+
+            UserCredential credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+                app,
+                scopes,
+                this.LocalUserName,
+                System.Threading.CancellationToken.None,
+                _fileDataStore);
+
+            _service = new DriveService(new Google.Apis.Services.BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = _appName
+            });
+        }
 
         public static bool CheckLogin(string localusername)
         {
