@@ -14,7 +14,7 @@ namespace GoogleDrive
 
         private async void btnKetNoiTaiKhoanGoogle_Click_1(object sender, EventArgs e)
         {
-            await _api.LoginAsync();
+            //await _api.LoginAsync();
 
             if (GoogleDriveApi.CheckLogin(_api.LocalUserName))
                 txtNhatKy.AppendText("Đã đăng nhập\r\n");
@@ -29,7 +29,7 @@ namespace GoogleDrive
 
         private async void btnTaiLen_Click_1(object sender, EventArgs e)
         {
-            await _api.LoginAsync();
+            //await _api.LoginAsync();
             if (GoogleDriveApi.CheckLogin(_api.LocalUserName))
             {
                 if (string.IsNullOrWhiteSpace(txtDuongDanTep.Text))
