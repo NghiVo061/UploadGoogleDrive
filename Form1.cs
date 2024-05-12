@@ -38,22 +38,22 @@ namespace GoogleDrive
                     return;
                 }
 
-                _cancellationTokenSource = new CancellationTokenSource();
-                string folderId = await _api.CreateFolderIfNotExistAync("Test Code Tai Tep Len GG Drive");
-                try
-                {
-                    string fileId = await _api.UploadFileAsync(txtDuongDanTep.Text, _cancellationTokenSource.Token, folderId);
-                    string linkFile = _api.GetLinkFile(fileId);
-                    txtNhatKy.AppendText($"Tải lên thành công, đường dẫn tệp:\r\n{linkFile}\r\n");
-                }
-                catch (OperationCanceledException)
-                {
-                    txtNhatKy.AppendText("Tải lên đã bị hủy bỏ\r\n");
-                }
-                catch (Exception ex)
-                {
-                    txtNhatKy.AppendText($"Lỗi xảy ra: {ex.Message}\r\n");
-                }
+                //_cancellationTokenSource = new CancellationTokenSource();
+                //string folderId = await _api.CreateFolderIfNotExistAync("Test Code Tai Tep Len GG Drive");
+                //try
+                //{
+                //    string fileId = await _api.UploadFileAsync(txtDuongDanTep.Text, _cancellationTokenSource.Token, folderId);
+                //    string linkFile = _api.GetLinkFile(fileId);
+                //    txtNhatKy.AppendText($"Tải lên thành công, đường dẫn tệp:\r\n{linkFile}\r\n");
+                //}
+                //catch (OperationCanceledException)
+                //{
+                //    txtNhatKy.AppendText("Tải lên đã bị hủy bỏ\r\n");
+                //}
+                //catch (Exception ex)
+                //{
+                //    txtNhatKy.AppendText($"Lỗi xảy ra: {ex.Message}\r\n");
+                //}
             }
         }
 
