@@ -61,7 +61,7 @@ namespace UploadGoogleDrive
             return System.IO.File.Exists(fileSave);
         }
 
-        public async Task<string> CreateFolderIfNotExistAync(string folderName)
+        /*public async Task<string> CreateFolderIfNotExistAync(string folderName)
         {
             var timKiemFolder_request = _service.Files.List();
             timKiemFolder_request.Q = $"mimeType='application/vnd.google-apps.folder' and name='{folderName}' and trashed=false";
@@ -80,7 +80,7 @@ namespace UploadGoogleDrive
             request.Fields = "id";
             var file = await request.ExecuteAsync();
             return file.Id;
-        }
+        }*/
 
         public async Task<string> UploadFileAsync(string filepath,
                            CancellationToken cancel_token,
@@ -146,9 +146,9 @@ namespace UploadGoogleDrive
                 System.IO.File.Delete(fileSave);
         }
 
-        public string GetLinkFile(string fileId)
+        /*public string GetLinkFile(string fileId)
         {
             return $"https://drive.google.com/file/d/{fileId}";
-        }
+        }*/
     }
 }
